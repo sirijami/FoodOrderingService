@@ -22,4 +22,14 @@ public class MyResource {
     public String getIt() {
         return "Got it!";
     }
+    
+    @Path("/test")
+    
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getText(){
+    	return "test test";
+    }
+    
+    
 }
