@@ -1,72 +1,45 @@
 package FoodOrderingServicePackage.FoodOrderingService.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Menu {
 	
-	private String drinks;
-	private String sides;
-	private String appetizers;
-	private String entree;
-	private String salads;
-	private String desserts;
+	// menuName
+	// List<MenuItems>
+	private String menuType;
+	private long menuId;
+//	List<MenuItems> menu_i = new ArrayList<MenuItems>();
 	
-   
-	public Menu(String drinks, String sides, String appetizers, String entree,
-			String salads, String desserts) {
-		this.drinks = drinks;
-		this.sides = sides;
-		this.appetizers = appetizers;
-		this.entree = entree;
-		this.salads = salads;
-		this.desserts = desserts;
+	public Menu(){
+		
+	}
+    /* Menu Types are : Sides, Entree, Salads, Drinks, Desserts */
+
+	public Menu(String menuType, long menuId) {
+		this.menuType = menuType;
+		this.menuId = menuId;
+	}
+	
+	public long getMenuId() {
+		return menuId;
 	}
 
-	public String getDrinks() {
-		return drinks;
+	public void setMenuId(long menuId) {
+		this.menuId = menuId;
 	}
 
-	public void setDrinks(String drinks) {
-		this.drinks = drinks;
+	public String getMenuType() {
+		return menuType;
 	}
-
-	public String getSides() {
-		return sides;
+	public void setMenuType(String menuType) {
+		this.menuType = menuType;
 	}
-
-	public void setSides(String sides) {
-		this.sides = sides;
-	}
-
-	public String getAppetizers() {
-		return appetizers;
-	}
-
-	public void setAppetizers(String appetizers) {
-		this.appetizers = appetizers;
-	}
-
-	public String getEntree() {
-		return entree;
-	}
-
-	public void setEntree(String entree) {
-		this.entree = entree;
-	}
-
-	public String getSalads() {
-		return salads;
-	}
-
-	public void setSalads(String salads) {
-		this.salads = salads;
-	}
-
-	public String getDesserts() {
-		return desserts;
-	}
-
-	public void setDesserts(String desserts) {
-		this.desserts = desserts;
-	}
+	
+	
+	
+	
+	
 	
 	
 

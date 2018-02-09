@@ -11,8 +11,8 @@ import javax.ws.rs.core.MediaType;
 import FoodOrderingServicePackage.FoodOrderingService.model.MenuItems;
 import FoodOrderingServicePackage.FoodOrderingService.service.MenuItemsService;
 
+//@Path("/resturants/{resturantId}/menu/{menuId}/menuItems")
 @Path("/menuItems")
-
 public class MenuItemsResource {
 	
 	MenuItemsService menuItem_service = new MenuItemsService();
@@ -23,12 +23,12 @@ public class MenuItemsResource {
 		return menuItem_service.getMenuItems();
 	}
 	
-//	@Path("/menuItemName")
-//	@GET
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public MenuItems getItemDetailsByName(@PathParam("menuItemName") String menuItemName){
-//		return menuItem_service.getMenuItems().
-//	}
+	@Path("/{menuId}")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public MenuItems getItemDetailsByName(@PathParam("menuId") long menuId){
+		return menuItem_service.getMenuItem(menuId);
+	}
 
 	
 

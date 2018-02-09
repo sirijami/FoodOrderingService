@@ -27,6 +27,11 @@ public class MenuItemsService {
 		menuItems.put(new_menuItem.getId(), new_menuItem);
 		return new_menuItem;		
 	}
+
+
+	public MenuItems getMenuItem(long menuId) {
+		return menuItems.get(menuId);
+	}
 	
 
 }
