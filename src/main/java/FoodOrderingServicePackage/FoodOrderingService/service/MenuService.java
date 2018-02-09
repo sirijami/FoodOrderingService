@@ -6,6 +6,7 @@ import java.util.Map;
 
 import FoodOrderingServicePackage.FoodOrderingService.database.DatabaseClass;
 import FoodOrderingServicePackage.FoodOrderingService.model.Menu;
+import FoodOrderingServicePackage.FoodOrderingService.model.MenuItems;
 
 public class MenuService {
 	Map<Long, Menu> menus = DatabaseClass.getMenus();
@@ -24,6 +25,16 @@ public class MenuService {
 	
 	public Menu getMenu(long menuId){
 		return menus.get(menuId);
+	}
+	
+	public Menu removeMenu(long menuid){
+		return menus.remove(menuid);
+	}
+
+	public Menu addMenu(Menu menu) {
+		menu.setMenuId(menus.size() + 1);
+		menus.put(menu.getMenuId(), menu);
+		return menu;
 	}
 
 }

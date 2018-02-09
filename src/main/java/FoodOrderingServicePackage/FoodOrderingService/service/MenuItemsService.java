@@ -6,6 +6,7 @@ import java.util.Map;
 
 import FoodOrderingServicePackage.FoodOrderingService.database.DatabaseClass;
 import FoodOrderingServicePackage.FoodOrderingService.model.MenuItems;
+import FoodOrderingServicePackage.FoodOrderingService.model.Restaurant;
 
 public class MenuItemsService {
 	
@@ -22,16 +23,19 @@ public class MenuItemsService {
 		return new ArrayList<MenuItems>(menuItems.values());
 	}
 	
+	public MenuItems getMenuItem(long menuId) {
+		return menuItems.get(menuId);
+	}
+	
 	public MenuItems addMenuItem(MenuItems new_menuItem){
 		new_menuItem.setId(menuItems.size() + 1);
 		menuItems.put(new_menuItem.getId(), new_menuItem);
 		return new_menuItem;		
 	}
-
-
-	public MenuItems getMenuItem(long menuId) {
-		return menuItems.get(menuId);
-	}
 	
+	
+	public MenuItems removeMenuItem(long menuItem_id){
+		return menuItems.remove(menuItem_id);
+	}
 
 }
