@@ -9,38 +9,35 @@ import FoodOrderingServicePackage.FoodOrderingService.model.Restaurant;
 
 public class RestaurantService {
 	
-	private Map<Long,Restaurant> restaurants = DatabaseClass.getRestaurants();
+	private Map<String,Restaurant> restaurants = DatabaseClass.getRestaurants();
 	
 	public RestaurantService(){
-		restaurants.put(1L, new Restaurant(1,"Ruchi", "123 Bellevue way", "Redmond", "WA", "USA", 4,"Indian"));
-		restaurants.put(2L, new Restaurant(2,"All Day Pho", "13 Bellevue way NE", "Bellevue", "WA", "USA", 3,"Vietnameese"));
-		restaurants.put(3L, new Restaurant(3,"Madras Dosa Corner", "56 Gilman Blvd", "Issaquah", "WA", "USA", 5,"South-Indian"));
+		restaurants.put("Ruchi", new Restaurant(1,"Ruchi", "123 Bellevue way", "Redmond", "WA", "USA", 4,"Indian"));
+		restaurants.put("All Day Pho", new Restaurant(2,"All Day Pho", "13 Bellevue way NE", "Bellevue", "WA", "USA", 3,"Vietnameese"));
+		restaurants.put("Madras Dosa Corner", new Restaurant(3,"Madras Dosa Corner", "56 Gilman Blvd", "Issaquah", "WA", "USA", 5,"South-Indian"));
 	}
 	
 	public List<Restaurant> getAllRestaurants(){
             return new ArrayList<Restaurant>(restaurants.values());
 	}
 	
-	public Restaurant getRestaurant(long id){
-		return restaurants.get(id);
+	public Restaurant getRestaurant(String restaurant_name){
+		return restaurants.get(restaurant_name);
 	}
 	
 	
 	public Restaurant addRestaurant(Restaurant new_restautant){
 		new_restautant.setId(restaurants.size() + 1);
-		restaurants.put(new_restautant.getId(), new_restautant);
+		restaurants.put(new_restautant.getRestaurant_name(), new_restautant);
 		return new_restautant;	  
 	}
 	
 	public Restaurant updateRestaurant(Restaurant restaurant){
-		if(restaurant.getId() <= 0){
-			return null;
-		}
-		restaurants.put(restaurant.getId(), restaurant);
+		restaurants.put(restaurant.getRestaurant_name(), restaurant);
 		return restaurant;
 	}
 	
-	public Restaurant removeRestaurant(long id){
-		return restaurants.remove(id);
+	public Restaurant removeRestaurant(String restaurant_name){
+		return restaurants.remove(restaurant_name);
 	}
 }

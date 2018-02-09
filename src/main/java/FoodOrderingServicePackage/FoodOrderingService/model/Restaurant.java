@@ -12,7 +12,7 @@ public class Restaurant {
 	private String country;
 	private float overall_rating;
 	private String cusine_category;
-	// List<Menus>
+	
 	public Restaurant(){
 		
 	}

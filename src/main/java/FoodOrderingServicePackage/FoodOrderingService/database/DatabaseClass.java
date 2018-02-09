@@ -10,12 +10,12 @@ import FoodOrderingServicePackage.FoodOrderingService.model.Restaurant;
 
 public class DatabaseClass {
 	
-	private static Map<Long,Restaurant> restaurants = new HashMap<Long,Restaurant>();
+	private static Map<String,Restaurant> restaurants = new HashMap<String,Restaurant>();
 	private static Map<Long,MenuItems> menuItems = new HashMap<Long, MenuItems>();
 	private static Map<Long,Menu> menus = new HashMap<Long,Menu>();
 	
 	
-	public static Map<Long, Restaurant> getRestaurants(){
+	public static Map<String, Restaurant> getRestaurants(){
 		return restaurants;
 	}
 	
